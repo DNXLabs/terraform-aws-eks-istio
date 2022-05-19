@@ -1,4 +1,4 @@
-# terraform-aws-eks-external-secrets
+# terraform-aws-eks-istio
 
 [![Lint Status](https://github.com/DNXLabs/terraform-aws-eks-istio/workflows/Lint/badge.svg)](https://github.com/DNXLabs/terraform-aws-eks-istio/actions)
 [![LICENSE](https://img.shields.io/github/license/DNXLabs/terraform-aws-eks-istio)](https://github.com/DNXLabs/terraform-aws-eks-istio/blob/master/LICENSE)
