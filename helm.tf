@@ -13,6 +13,9 @@ resource "helm_release" "istio_base" {
 }
 
 resource "helm_release" "istiod" {
+  depends_on = [
+    helm_release.istio_base
+  ]
   count      = var.enabled && var.istiod_enabled ? 1 : 0
   name       = "istio-istiod"
   repository = var.helm_chart_repo
@@ -27,6 +30,9 @@ resource "helm_release" "istiod" {
 }
 
 resource "helm_release" "istio_ingressgateway" {
+  depends_on = [
+    helm_release.istiod
+  ]
   count      = var.enabled && var.ingressgateway_enabled ? 1 : 0
   name       = "istio-ingressgateway"
   repository = var.helm_chart_repo
