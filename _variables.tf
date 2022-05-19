@@ -48,15 +48,15 @@ variable "namespace" {
 
 variable "base_settings" {
   default     = {}
-  description = "Additional settings which will be passed to the Helm chart values."
+  description = "Additional settings which will be passed to the Istio Base Helm chart values."
 }
 
 variable "istiod_settings" {
   default     = {}
-  description = "Additional settings which will be passed to the Helm chart values."
+  description = "Additional settings which will be passed to the Istio Discovery Helm chart values."
 }
 
 variable "ingressgateway_settings" {
   default     = {}
-  description = "Additional settings which will be passed to the Helm chart values."
+  description = "Additional settings which will be passed to the Istio Ingress Gateway Helm chart values."
 }
