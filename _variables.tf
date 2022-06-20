@@ -57,6 +57,6 @@ variable "istiod_settings" {
 }
 
 variable "ingressgateway_settings" {
-  default     = {}
+  default     = []
   description = "Additional settings which will be passed to the Istio Ingress Gateway Helm chart values."
 }

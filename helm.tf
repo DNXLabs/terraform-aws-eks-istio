@@ -33,7 +33,7 @@ resource "helm_release" "istio_ingressgateway" {
   depends_on = [
     helm_release.istiod
   ]
-  count      = var.enabled && var.ingressgateway_enabled ? 1 : 0
+  count      = var.enabled && var.ingressgateway_enabled ? length(var.ingressgateway_settings) : 0
   name       = "istio-ingressgateway"
   repository = var.helm_chart_repo
   chart      = "gateway"
@@ -61,7 +61,7 @@ resource "helm_release" "istio_ingressgateway" {
   }
 
   values = [
-    yamlencode(var.ingressgateway_settings)
+    yamlencode(var.ingressgateway_settings[count.index])
   ]
 
 }
